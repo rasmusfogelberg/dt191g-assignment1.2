@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Razor Tutorial</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Razor">Razor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="border py-2 px-2">
+                    Today's date is:
+                    <span id="date">
+                        @DateTime.Now.ToString("yyyy-MM-dd")
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-shrink-0 container-fluid pb-3">
+        <div class="row container">
+            <div class="d-none d-sm-block border-0 col-4">
+                <div class="list-group">
+                    <a asp-area="" asp-page="/Index" class="list-group-item list-group-item-action">Start</a>
+                    <a asp-area="" asp-page="/Razor" class="list-group-item list-group-item-action">Razor</a>
+                    <a asp-area="" asp-page="/About" class="list-group-item list-group-item-action">About</a>
+                </div>
+            </div>
+            <div class="border px-4 py-4 col-md-8">
+                @RenderBody()
+            </div>
+        </div>
+    </main>
+
+    <footer class="border mt-auto py-4 px-4 footer">
+        <div class="container text-center">
+            <span class="text-muted">
+                Created by Rasmus Fogelberg &dash; Contact me at <a
+                    href="mailto:fogelbergrasmus@gmail.com">fogelbergrasmus@gmail.com</a>
+            </span>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+﻿@page
+@model RazorModel
+@{
+    ViewData["Title"] = "Razor";
+    var date = DateTime.Now.ToString("yyyy-mm-dd HH:mm:ss");
+    var weekday = DateTime.Now.DayOfWeek;
+    var day = weekday.ToString();
+    var message = "";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p class="fw-bold">Information</p>
+
+<p>Date and time: @date</p>
+
+@if (day == "Monday")
+{
+    message = "Today is Monday";
+}
+else
+{
+    message = "Today is not Monday";
+}
+
+<p>@message</p>
+
+<p class="fw-bold">Courses I've taken: </p>
+
+<ul>
+    @if (Model != null)
+    {
+        foreach (var course in Model.Courses)
+        {
+            <li>@course.Name</li>
+        }
+    }
+</ul>
