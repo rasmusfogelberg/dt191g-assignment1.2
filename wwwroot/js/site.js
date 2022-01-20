@@ -1,4 +1,7 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// Simple JavaScript function to toggle background color of the body tag
+const toggleButton = document.getElementById("toggleBgColor");
 
-// Write your JavaScript code.
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("neonBlue");
+});
+
