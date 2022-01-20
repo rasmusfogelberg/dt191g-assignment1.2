@@ -19,4 +19,13 @@ body {
 
 .neonBlue {
   background-color: #1F51FF;
+  color: #fff;
+}
+
+.neonBlue header, span#date {
+  color: #000;
+}
+
+.neonBlue footer span, .neonBlue footer a {
+  color: #fff !important;
 }
